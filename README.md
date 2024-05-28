@@ -1,3 +1,10 @@
+This is a https://railway.app version of gate. 
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/fsdULq?referralCode=wsWbKh)
+
+
+
+
 [![Logo](.web/docs/public/og-image.png)](https://gate.minekube.com)
 
 # The extensible Minecraft Proxy
