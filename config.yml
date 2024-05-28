@@ -1,16 +1,14 @@
 # Gate proxy configuration for Minecraft Java Edition
 config:
-  # The bind address to listen for Minecraft client connections.
-  bind: 0.0.0.0:25565
+  bind: 0.0.0.0:${{RAILWAY_TCP_APPLICATION_PORT}}
   # Whether to use the proxy in online (authenticate players with Mojang API) or offline mode (not recommended).
   onlineMode: true
   # Registers servers with the proxy by giving the address of backend server a custom reference name.
   servers:
-    # Server name: server address
-    server1: localhost:25566
-    server2: localhost:25567
-    server3: localhost:25568
-    server4: localhost:25569
+    server1: ${{SERVER1_ADDRESS}}:${{SERVER1_PORT}}
+    server2: ${{SERVER2_ADDRESS}}:${{SERVER2_PORT}}
+    server3: ${{SERVER3_ADDRESS}}:${{SERVER3_PORT}}
+    server4: ${{SERVER4_ADDRESS}}:${{SERVER4_PORT}}
   # The list of servers to try (ordered) to connect a player to
   # upon login or fallback when a player is kicked from a server.
   try:
@@ -22,8 +20,7 @@ config:
   status:
     # The message of the day in legacy '§' format or modern text component '{"text":"...", ...}' json.
     motd: |
-      §bA Gate Proxy
-      §bVisit ➞ §fgithub.com/minekube/gate
+      ${{MC_MOTD}}
     # The maximum players shown (is not the actual player limit!).
     showMaxPlayers: 1000
     # The server image (optimal 64x64); a path of an image file or the base64 data uri.
